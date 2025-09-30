@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sai Vittal Ayyalasomayajula — Portfolio</title>
   <meta name="description" content="MS in Data Analytics Engineering @ Northeastern. Data/BI/ML projects with Python, SQL, Tableau, and Power BI." />
+  <!-- Drop your photo at: assets/profile.jpg -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -13,36 +14,42 @@
     :root{
       --bg:#0b172a; --bg-2:#0f213f; --card:#122a4a;
       --text:#e5ecf5; --muted:#9fb2ca; --accent:#4f46e5; --accent-2:#22d3ee;
+      --border:rgba(255,255,255,.08);
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:linear-gradient(180deg,var(--bg),#0b1630 40%,#0b1630);}
     a{color:var(--accent-2);text-decoration:none} a:hover{opacity:.9}
     .container{width:min(1100px,92%);margin-inline:auto}
-    header{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(11,22,48,.6);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
+    header{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(11,22,48,.6);border-bottom:1px solid var(--border);z-index:50}
     nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{font-weight:800;letter-spacing:.4px}
     .navlinks a{margin:0 10px;color:var(--muted)} .navlinks a:hover{color:var(--text)}
     .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border:1px solid rgba(255,255,255,.15);border-radius:12px;color:var(--text);background:transparent}
     .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:white}
     .btn:hover{transform:translateY(-1px)}
-    .hero{padding:90px 0 60px;background:radial-gradient(1200px 500px at 80% -20%,rgba(79,70,229,.25),transparent),radial-gradient(800px 300px at 10% -10%,rgba(34,211,238,.18),transparent)}
-    .hero h1{font-size:clamp(36px,6vw,64px);margin:10px 0}
-    .hero p{color:var(--muted);font-size:1.1rem;max-width:780px}
+    .hero{padding:88px 0 60px;background:
+      radial-gradient(1200px 500px at 85% -20%,rgba(79,70,229,.25),transparent),
+      radial-gradient(800px 300px at 10% -10%,rgba(34,211,238,.18),transparent)}
+    .hero-grid{display:grid;grid-template-columns:160px 1fr;gap:24px;align-items:center}
+    .hero h1{font-size:clamp(34px,5.8vw,60px);margin:10px 0}
+    .hero p{color:var(--muted);font-size:1.05rem;max-width:780px}
     .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    section{padding:60px 0;border-top:1px solid rgba(255,255,255,.06)}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid var(--border);border-radius:999px;color:var(--muted)}
+    .avatar{width:160px;height:160px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.25);box-shadow:0 8px 28px rgba(0,0,0,.25)}
+    section{padding:60px 0;border-top:1px solid var(--border)}
     h2{font-size:28px;margin:0 0 16px}
-    .kpis,.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
     .muted{color:var(--muted)}
+    .kpis,.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:16px;padding:18px}
     .timeline{display:grid;gap:14px}
-    .timeline .item{display:grid;gap:6px;padding:18px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.06)}
+    .timeline .item{display:grid;gap:6px;padding:18px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--border)}
     .item h3{margin:0;font-size:18px}
     .item .meta{color:var(--muted);font-size:.95rem}
     .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
     .project{display:flex;flex-direction:column;gap:10px}
-    .tag{display:inline-block;border:1px solid rgba(255,255,255,.12);padding:4px 10px;border-radius:999px;font-size:.85rem;color:var(--muted)}
-    footer{padding:40px 0;color:var(--muted)} .pill{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid rgba(255,255,255,.12);border-radius:999px}
-    .section{scroll-margin-top:80px}
+    .tag{display:inline-block;border:1px solid var(--border);padding:4px 10px;border-radius:999px;font-size:.85rem;color:var(--muted)}
+    footer{padding:42px 0;color:var(--muted);text-align:center}
+    @media (max-width:720px){.hero-grid{grid-template-columns:1fr;justify-items:center;text-align:center}}
   </style>
 </head>
 <body>
@@ -66,15 +73,18 @@
   <!-- HERO -->
   <section class="hero section" id="home">
     <div class="container">
-      <p class="pill"><i class="fa-solid fa-location-dot"></i> Boston, MA · MS in Data Analytics Engineering @ Northeastern</p>
-      <h1>Data/BI Analyst & ML Builder</h1>
-      <p>Turning messy data into clear decisions. I build reproducible pipelines, analytical dashboards, and predictive models with Python, SQL, and BI tools.</p>
-      <div class="cta">
-        <a class="btn primary" href="./Sai_Vittal_Ayyalasomayajula_Resume.pdf" target="_blank" rel="noopener">
-          <i class="fa-solid fa-file-arrow-down"></i> Resume
-        </a>
-        <a class="btn" href="https://www.linkedin.com/in/sai-vittal-ayyalasomayajula-753505211/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-        <a class="btn" href="https://github.com/USERNAME" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+      <p class="pill"><i class="fa-solid fa-location-dot"></i>&nbsp; Boston, MA · MS in Data Analytics Engineering @ Northeastern</p>
+      <div class="hero-grid">
+        <img class="avatar" src="assets/profile.jpg" alt="Sai Vittal Ayyalasomayajula headshot">
+        <div>
+          <h1>Data / BI Analyst & ML Builder</h1>
+          <p>Turning messy data into clear decisions. I build reproducible pipelines, analytical dashboards, and predictive models with Python, SQL, and BI tools.</p>
+          <div class="cta">
+            <a class="btn primary" href="./resume.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
+            <a class="btn" href="https://www.linkedin.com/in/sai-vittal-ayyalasomayajula-753505211/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a class="btn" href="https://github.com/vittal31052002" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -144,25 +154,25 @@
           <div class="tag">Python · Sklearn · Tableau</div>
           <h3>Data-Driven Zip Code Ranking (Suffolk)</h3>
           <p class="muted">Min-max scaling & weighted scoring across income/education/safety with an interactive Tableau dashboard to surface top-decile ZIPs.</p>
-          <p><a href="https://github.com/USERNAME/REPO" target="_blank">Case Study</a></p>
+          <p><a href="https://github.com/vittal31052002" target="_blank">Case Study</a></p>
         </article>
         <article class="project card">
           <div class="tag">RF · XGBoost · FastAPI</div>
           <h3>Malicious URL Detection (ML)</h3>
           <p class="muted">Evaluated 6 models; Random Forest ~92%. Real-time scoring API reduced threat exposure by ~40%.</p>
-          <p><a href="https://github.com/USERNAME/REPO" target="_blank">Notebook / API</a></p>
+          <p><a href="https://github.com/vittal31052002" target="_blank">Notebook / API</a></p>
         </article>
         <article class="project card">
           <div class="tag">TensorFlow/PyTorch</div>
           <h3>Credit Card Fraud Detection (DL)</h3>
           <p class="muted">Imbalanced classification with class weighting & threshold tuning; best deep model ~99% on 500k+ transactions.</p>
-          <p><a href="https://github.com/USERNAME/REPO" target="_blank">Repo</a></p>
+          <p><a href="https://github.com/vittal31052002" target="_blank">Repo</a></p>
         </article>
         <article class="project card">
           <div class="tag">SQL · Python · BI</div>
           <h3>Fitness Tracker Analytics</h3>
           <p class="muted">ETL + dashboards for 5k+ users; personalized insights increased engagement by ~30%.</p>
-          <p><a href="https://github.com/USERNAME/REPO" target="_blank">Dashboard</a></p>
+          <p><a href="https://github.com/vittal31052002" target="_blank">Dashboard</a></p>
         </article>
       </div>
     </div>
@@ -193,7 +203,7 @@
         &nbsp;•&nbsp;<i class="fa-brands fa-linkedin"></i>
         <a href="https://www.linkedin.com/in/sai-vittal-ayyalasomayajula-753505211/" target="_blank" rel="noopener">LinkedIn</a>
         &nbsp;•&nbsp;<i class="fa-brands fa-github"></i>
-        <a href="https://github.com/USERNAME" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/vittal31052002" target="_blank" rel="noopener">GitHub</a>
       </p>
     </div>
   </section>
